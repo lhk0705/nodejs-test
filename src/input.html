@@ -1,0 +1,31 @@
+<html>
+<body>
+<form action="http://localhost:8088/addScore" method="POST">
+First Name: <input type="text" class="first_name">  <br>
+ 
+Last Name: <input type="text" class="last_name">
+<button class="submit">提交</button>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+    $('.submit').click(function(){
+    var data={
+        "first_name":$(".first_name").val(),
+        "last_name":$(".last_name").val()
+    }
+    $.ajax({
+                type:"post",
+                url:"http://localhost:8088/addScore",
+                data:JSON.stringify(data),
+                contentType:"application/json",
+                dataType:"json",
+                success: function(data){
+                console.log("data");
+                }   
+                })
+          alert("提交成功！")
+          })
+</script>
+</form>
+</body>
+</html>
