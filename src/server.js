@@ -1,5 +1,10 @@
 var http = require('http');
-var exports = require('./exports');
-exports.sayHello();
-var server = http.createServer(exports.server);
+var url=require('url')
+
+var server = http.createServer(function(req,res){
+    res.headwrite(200,{'content-type':'text/plain'});
+    var params=url.parse(req.url,true).query;
+    res.end(param.name+params.url)
+
+});
 server.listen(8088);
