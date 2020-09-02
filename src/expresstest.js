@@ -9,7 +9,9 @@ app.post('/addScore',function(req,res){
         "first_name":req.body.first_name,
         "last_name":req.body.last_name
     };
-    console.log(response);   
-    res.end(JSON.stringify(response));
+    console.log(response);  
+    res.send(JSON.stringify(response)) ;
+    res.end();
 })
 app.listen(8088);
+exports.response=this.response
