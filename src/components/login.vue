@@ -28,13 +28,30 @@ export default {
     },
     methods:{
         submit(){
-           let a=[]
-            axios.get('http://localhost:8088/addUser')
+           let a={
+             "inputEmail"  :this.inputEmail,
+             "inputPassword":this.inputPassword
+           }
+
+            axios.post('/checkUser',a)
             .then(res=>{
-                for (let user in res.data){
-                a.push(user)}               
-               console.log(a);
-               } )
+                // for (let user in res.data){
+                // a.push(user)}  
+                // if(res.data==='登录成功！'){
+                //   this.$router.push('/home')
+                // }
+                // else{this.$router.push('/login')}             
+               for(let b of res.data){
+               if (b.Email===a.inputEmail&&
+               b.Password===a.inputPassword) {
+                 this.$router.push('/home');
+                 console.log("登录成功");
+               } else {
+                 this.$router.push('/login');
+                 console.log("登录失败");
+               }
+               }
+               })
         }
     }
 

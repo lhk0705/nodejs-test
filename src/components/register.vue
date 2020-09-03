@@ -32,7 +32,7 @@ export default {
              "inputEmail"  :this.inputEmail,
              "inputPassword":this.inputPassword
            }
-            axios.post('http://localhost:8088/addUser',a)
+            axios.post('/addUser',a)
             .then(res=>{console.log(res)})
         }
     }

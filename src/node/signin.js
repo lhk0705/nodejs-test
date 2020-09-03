@@ -15,4 +15,12 @@ app.post('/addUser',(req,res)=>{
     console.log(resps);
     res.send(JSON.stringify(resps));
     res.end();
-}).listen(8088)
+});
+app.post('/checkUser',(req,res)=>{
+    
+    res.send(resps);
+
+        res.end();
+    }
+);
+app.listen(8088)
