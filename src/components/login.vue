@@ -43,12 +43,12 @@ export default {
                 // else{this.$router.push('/login')}             
               
               
-               if (res.data) {
-                    console.log("登录成功");
+               if (res.data.length===1) {
+                  console.log("登录成功");
                  this.$router.push('/home');
                  
                } else {
-                 this.$router.push('/');
+                 
                  console.log("登录失败");
                  alert("请输入正确的账号密码！")
                }

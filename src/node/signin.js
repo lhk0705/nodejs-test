@@ -17,14 +17,17 @@ app.post('/addUser',(req,res)=>{
     res.end();
 });
 app.post('/checkUser',(req,res)=>{
+    var b=[]
     for(let a of resps){
         if(a.Email===req.body.inputEmail&&a.Password===req.body.inputPassword)
-        {
-            res.send("yes");
-            res.end()
+        {   
+            b.push("1")
+            
         }else{
             
         }
+        res.send(b);
+        res.end()
     }
     
     }
