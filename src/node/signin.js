@@ -17,10 +17,10 @@ app.post('/addUser',(req,res)=>{
     res.end();
 });
 app.post('/checkUser',(req,res)=>{
-    
+    console.log(req.body);
     res.send(resps);
 
-        res.end();
+    res.end();
     }
 );
 app.listen(8088)

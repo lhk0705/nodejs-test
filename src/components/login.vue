@@ -41,16 +41,19 @@ export default {
                 //   this.$router.push('/home')
                 // }
                 // else{this.$router.push('/login')}             
-               for(let b of res.data){
-               if (b.Email===a.inputEmail&&
-               b.Password===a.inputPassword) {
-                 this.$router.push('/home');
-                 console.log("登录成功");
-               } else {
-                 this.$router.push('/login');
-                 console.log("登录失败");
-               }
-               }
+              
+            //   for(let b of res.data){
+            //    if (b.Email===a.inputEmail&&
+            //    b.Password===a.inputPassword) {
+            //      this.$router.push('/home');
+            //      console.log("登录成功");
+            //    } else {
+            //      this.$router.push('/login');
+            //      console.log("登录失败");
+            //    }
+            //    }
+
+                console.log(res.data);
                })
         }
     }
