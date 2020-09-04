@@ -17,10 +17,16 @@ app.post('/addUser',(req,res)=>{
     res.end();
 });
 app.post('/checkUser',(req,res)=>{
-    console.log(req.body);
-    res.send(resps);
-
-    res.end();
+    for(let a of resps){
+        if(a.Email===req.body.inputEmail&&a.Password===req.body.inputPassword)
+        {
+            res.send("yes");
+            res.end()
+        }else{
+            
+        }
+    }
+    
     }
 );
 app.listen(8088)

@@ -1,6 +1,6 @@
 <template>
 
-<form class="form-signin"  method="POST">
+<div>
   <img class="mb-4" src="/docs/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
@@ -14,7 +14,7 @@
   </div>
   <button class="btn btn-lg btn-primary btn-block" @click="submit">注册</button>
   <p >© 2017-2020</p>
-</form>
+</div>
 </template>
 
 <script>
@@ -33,8 +33,10 @@ export default {
              "inputEmail"  :this.inputEmail,
              "inputPassword":this.inputPassword
            }
-            axios.post('/addUser',a)
-            .then(res=>{console.log(res)})
+            axios.post('http://localhost:8088/addUser',a)
+            .then(res=>{console.log(res);
+            this.$router.push('/')
+            })
         }
     }
 

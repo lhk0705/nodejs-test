@@ -1,6 +1,6 @@
 <template>
 
-<form class="form-signin"  method="POST">
+<div>
   <img class="mb-4" src="/docs/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
@@ -14,7 +14,7 @@
   </div>
   <button class="btn btn-lg btn-primary btn-block" @click="submit">Sign in</button>
   <p >© 2017-2020</p>
-</form>
+</div>
 </template>
 
 <script>
@@ -42,18 +42,19 @@ export default {
                 // }
                 // else{this.$router.push('/login')}             
               
-            //   for(let b of res.data){
-            //    if (b.Email===a.inputEmail&&
-            //    b.Password===a.inputPassword) {
-            //      this.$router.push('/home');
-            //      console.log("登录成功");
-            //    } else {
-            //      this.$router.push('/login');
-            //      console.log("登录失败");
-            //    }
-            //    }
+              
+               if (res.data) {
+                    console.log("登录成功");
+                 this.$router.push('/home');
+                 
+               } else {
+                 this.$router.push('/');
+                 console.log("登录失败");
+                 alert("请输入正确的账号密码！")
+               }
+               
 
-                console.log(res.data);
+               
                })
         }
     }
