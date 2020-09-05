@@ -3,10 +3,12 @@
 <div>
   <img class="mb-4" src="/docs/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" v-model="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" v-model="inputPassword" class="form-control" placeholder="Password" required="">
+    <label for="userId" class="sr-only">userId</label>
+  <input type="userId" v-model="userId" class="form-control" placeholder="userId" required="">
+  <label for="email" class="sr-only">Email address</label>
+  <input type="email" v-model="email" class="form-control" placeholder="Email address" required="" autofocus="">
+  <label for="password" class="sr-only">Password</label>
+  <input type="password" v-model="password" class="form-control" placeholder="Password" required="">
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
@@ -23,15 +25,17 @@ axios.defaults.baseURL='http://localhost:8088'
 export default {
     data(){
         return{
-            inputEmail:'',
-            inputPassword:''
+          userId:'',
+            email:'',
+            password:''
         }
     },
     methods:{
         submit(){
            let a={
-             "inputEmail"  :this.inputEmail,
-             "inputPassword":this.inputPassword
+             "userId":this.userId,
+             "email"  :this.email,
+             "password":this.password
            }
             axios.post('http://localhost:8088/addUser',a)
             .then(res=>{console.log(res);
