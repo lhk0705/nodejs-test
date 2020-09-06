@@ -4,7 +4,7 @@
   <img class="mb-4" src="/docs/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="userId" class="sr-only">userId</label>
-  <input type="userId" v-model="userId" class="form-control" placeholder="userId" required="">
+  <input type="text" v-model="userId" class="form-control" placeholder="userId" required="">
   <label for="email" class="sr-only">Email address</label>
   <input type="email" v-model="email" class="form-control" placeholder="Email address" required="" autofocus="">
   <label for="password" class="sr-only">Password</label>
